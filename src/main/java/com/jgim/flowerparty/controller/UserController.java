@@ -17,16 +17,13 @@ public class UserController {
     private final UserService userService;
 
     // 회원 가입
-    public String insertUser(@RequestBody UserDTO userDTO) {
+    public void insertUser(@RequestBody UserDTO userDTO) {
         userService.insertUser(userDTO);
-
-        return null;
     }
 
     // 로그인
-    public String login() {
-
-        return null;
+    public void login(UserDTO userDTO) {
+        userService.login(userDTO);
     }
 
     // 비밀번호 수정

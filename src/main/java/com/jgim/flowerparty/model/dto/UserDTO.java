@@ -7,19 +7,19 @@ import lombok.Getter;
 @Builder
 public class UserDTO {
     private String userId;
-    private String userPw;
-    private String userEmail;
-    private String userName;
+    private String password;
+    private String email;
+    private String nickname;
     private boolean havePlant;
 
     public UserDTO() {}
 
     @Builder
-    public UserDTO(String userId, String userPw, String userEmail, String userName, boolean havePlant) {
+    public UserDTO(String userId, String password, String email, String nickname, boolean havePlant) {
         this.userId = userId;
-        this.userPw = userPw;
-        this.userEmail = userEmail;
-        this.userName = userName;
+        this.password = password;
+        this.email = email;
+        this.nickname = nickname;
         this.havePlant = havePlant;
     }
 }
