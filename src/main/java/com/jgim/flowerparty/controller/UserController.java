@@ -1,24 +1,27 @@
 package com.jgim.flowerparty.controller;
 
 import com.jgim.flowerparty.model.dto.UserDTO;
+import com.jgim.flowerparty.model.entity.User;
 import com.jgim.flowerparty.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/")
+@RequestMapping("/member")
 public class UserController {
 
     @Autowired
     private final UserService userService;
 
     // 회원 가입
-    public void insertUser(@RequestBody UserDTO userDTO) {
-        userService.insertUser(userDTO);
+    @PostMapping("/signup")
+    public User insertUser(@RequestBody UserDTO userDTO) {
+        return userService.insertUser(userDTO);
     }
 
     // 로그인
