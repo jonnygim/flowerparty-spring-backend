@@ -1,5 +1,7 @@
 package com.jgim.flowerparty.model.entity;
 
+import com.jgim.flowerparty.model.dto.PlantDTO;
+import com.jgim.flowerparty.model.dto.UserDTO;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -23,11 +25,11 @@ public class UserPlant {
     @Column(nullable = false, name="reg_date")
     private Date regDate;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = User.class)
     @JoinColumn(name="user_id")
-    private String userId;
+    private User userId;
 
-    @ManyToOne
+    @ManyToOne(targetEntity = Plant.class)
     @JoinColumn(name="plant_id")
-    private String plantId;
+    private Plant plantId;
 }
